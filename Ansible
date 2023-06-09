@@ -1,0 +1,19 @@
+- name: Run executable and restart on Windows host
+  hosts: win
+  gather_facts: false
+  tasks:
+    - name: Run PowerShell script
+      win_shell: powershell.exe -ExecutionPolicy Bypass -File 'C:\openssh\HP Disable filter.ps1'
+
+    - name: Restart system
+      win_shell: shutdown /r /f /t 0
+      async: 0
+      poll: 0
+      
+    - name: Run PowerShell script
+      win_shell: powershell.exe -ExecutionPolicy Bypass -File 'C:\openssh\HP Enable Filter.ps1'
+
+    - name: Restart the system
+      win_shell: shutdown /r /f /t 0
+      async: 0
+      poll: 0
