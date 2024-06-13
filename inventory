@@ -1,0 +1,5 @@
+[hosts]
+hostname01  ansible_user=username ansible_password=password
+hostname02  ansible_user=username ansible_password=password
+hostname03  ansible_user=username ansible_password=password
+hostname04  ansible_user=username ansible_password=password
