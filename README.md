@@ -17,22 +17,12 @@ Before installing Ansible, ensure you have the following:
     sudo apt update
     ```
 
-2. **Install the required dependencies:**
-    ```sh
-    sudo apt install software-properties-common
-    ```
-
-3. **Add the Ansible PPA (Personal Package Archive):**
-    ```sh
-    sudo add-apt-repository --yes --update ppa:ansible/ansible
-    ```
-
-4. **Install Ansible:**
+2. **Install Ansible:**
     ```sh
     sudo apt install ansible
     ```
 
-5. **Verify the installation:**
+3. **Verify the installation:**
     ```sh
     ansible --version
     ```
