@@ -1,0 +1,27 @@
+---
+- name: Installation and Configuration
+  hosts: all
+  become: yes
+
+  tasks:
+    - name: Create a new folder
+      file:
+        path: /path/to/newfolder
+        state: directory
+        mode: '0755'
+
+    - name: Copy the file
+      copy:
+        src: /path/to/source/file.tar.gz
+        dest: /path/to/newfolder/
+
+    - name: Extract the tar file
+      unarchive:
+        src: /path/to/newfolder/file.tar.gz
+        dest: /path/to/newfolder/
+        remote_src: yes
+
+    - name: Run the bash script
+      command: /bin/bash /path/to/newfolder/your_script.sh
+      args:
+        chdir: /path/to/newfolder/
