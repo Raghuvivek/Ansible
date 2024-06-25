@@ -1,8 +1,12 @@
 ---
-- name: Installation and Configuration
+- name: Playbook to PXE Setup
   hosts: all
-  become: yes
-
+  gather_facts: true
+  become: true
+  vars_files:
+    - /ansible/salt-master/secrets.yml
+  vars:
+    ansible_become_pass: "{{ sudo_password }}"
   tasks:
     - name: Create a new folder
       file:
